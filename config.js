@@ -48,12 +48,16 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
+        url: 'http://dsdebater.herokuapp.com',
         mail: {},
         database: {
-            client: 'sqlite3',
+            client: 'postgres',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
+                host: process.env.PG_HOST,
+                user: process.env.PG_USER,
+                password: process.env.PG_PASSWORD,
+                database: process.env.PG_DATABASE,
+                port: '5432'
             },
             debug: false
         },
@@ -61,7 +65,7 @@ config = {
             // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2368'
+            port: process.env.PORT
         }
     },
 

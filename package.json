@@ -47,6 +47,7 @@
         "node-uuid": "1.4.1",
         "nodemailer": "0.5.13",
         "rss": "0.2.1",
+        "pg": "latest",
         "semver": "2.2.1",
         "showdown": "https://github.com/ErisDS/showdown/archive/v0.3.2-ghost.tar.gz",
         "sqlite3": "2.2.0",
